@@ -3,7 +3,7 @@
 
 ---
 
-<h1 id="dms-intergation">DMS intergation</h1>
+<h1 id="dms-intergation">Merchant intergation</h1>
 <h2 id="welcome">Welcome</h2>
 <p>This is the place to learn about bskt’s merchant API, View API Documentation and to get help using the Merchant Portal.</p>
 <h3 id="merchant-playground">Merchant Playground</h3>
