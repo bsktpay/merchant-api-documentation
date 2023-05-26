@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "611e5b51-a896-4440-b806-e17cb2b57df4",
+		"name": "Developer Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Developer Applications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVFMHVNMXNGQkt3OXhXQzZ5WFM0MSJ9.eyJodHRwczovL2FwaS5zdGFnZS5ic2t0cGF5LmNvL3JvbGVzIjpbIlJPTEVfSU5WRU5UT1JZIiwiUk9MRV9TQUxFUyIsIlJPTEVfQURNSU4iLCJST0xFX0RFRkFVTFQiXSwiaHR0cHM6Ly9hcGkuc3RhZ2UuYnNrdHBheS5jby91c2VyIjp7ImVtYWlsQWRkcmVzcyI6ImFhcm9uQGJza3QxLmNvIn0sImlzcyI6Imh0dHBzOi8vYnNrdHBheS1zdGFnZS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJiZTIxNGQyMWRhMDUxNjg4ODE0ODRkIiwiYXVkIjpbImh0dHBzOi8vYXBpLnN0YWdlLmJza3RwYXkuY28iLCJodHRwczovL2Jza3RwYXktc3RhZ2UuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NTAzNzY2NiwiZXhwIjoxNjg1MTI0MDY2LCJhenAiOiI3aFM0N1M0WURzWU1nVTlpMFY4VXVmdkUzSG9JY0l6QiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJvcmdfaWQiOiJvcmdfbkRTcVVzUWlTWTRmOW9JeiIsInBlcm1pc3Npb25zIjpbXX0.k9Ec0UXJn_EYZmlfVNup4_L5mK3e_nibCZuuSS70eeR6YyL3RvEl1iFHY_NLIUwfdeH_IP1Ekm14zr_NKwA4_lp0aphJ0j3XZvSf8M4wpLauYyGYY9xQquOLw_gfskHPW7lDqNCcagf5W_BNyPhmermD6tZUB5E1aFecWagLtmjVDtX-LMeyZvdHC-DDTEpzoGSstlkhdBLJnoCN9-GzZ65Lm28yZQYEEqJD99mFGcGydhXuLrw8jgvDUhFWuKQVUGz9d8DDZ6asFfE-OrlQ9afGtPC1Nl-ruyK3jnfCT8uXXhcA_D6ZiQTxA2YHrXHYk18HMxtZ2QCTUKQuXloJdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/developerApplications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"developerApplications",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Developer Application",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVFMHVNMXNGQkt3OXhXQzZ5WFM0MSJ9.eyJodHRwczovL2FwaS5zdGFnZS5ic2t0cGF5LmNvL3JvbGVzIjpbIlJPTEVfSU5WRU5UT1JZIiwiUk9MRV9TQUxFUyIsIlJPTEVfQURNSU4iLCJST0xFX0RFRkFVTFQiXSwiaHR0cHM6Ly9hcGkuc3RhZ2UuYnNrdHBheS5jby91c2VyIjp7ImVtYWlsQWRkcmVzcyI6ImFhcm9uQGJza3QxLmNvIn0sImlzcyI6Imh0dHBzOi8vYnNrdHBheS1zdGFnZS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJiZTIxNGQyMWRhMDUxNjg4ODE0ODRkIiwiYXVkIjpbImh0dHBzOi8vYXBpLnN0YWdlLmJza3RwYXkuY28iLCJodHRwczovL2Jza3RwYXktc3RhZ2UuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NTAzNzY2NiwiZXhwIjoxNjg1MTI0MDY2LCJhenAiOiI3aFM0N1M0WURzWU1nVTlpMFY4VXVmdkUzSG9JY0l6QiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJvcmdfaWQiOiJvcmdfbkRTcVVzUWlTWTRmOW9JeiIsInBlcm1pc3Npb25zIjpbXX0.k9Ec0UXJn_EYZmlfVNup4_L5mK3e_nibCZuuSS70eeR6YyL3RvEl1iFHY_NLIUwfdeH_IP1Ekm14zr_NKwA4_lp0aphJ0j3XZvSf8M4wpLauYyGYY9xQquOLw_gfskHPW7lDqNCcagf5W_BNyPhmermD6tZUB5E1aFecWagLtmjVDtX-LMeyZvdHC-DDTEpzoGSstlkhdBLJnoCN9-GzZ65Lm28yZQYEEqJD99mFGcGydhXuLrw8jgvDUhFWuKQVUGz9d8DDZ6asFfE-OrlQ9afGtPC1Nl-ruyK3jnfCT8uXXhcA_D6ZiQTxA2YHrXHYk18HMxtZ2QCTUKQuXloJdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/developerApplications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"developerApplications",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Developer Application",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVFMHVNMXNGQkt3OXhXQzZ5WFM0MSJ9.eyJodHRwczovL2FwaS5zdGFnZS5ic2t0cGF5LmNvL3JvbGVzIjpbIlJPTEVfSU5WRU5UT1JZIiwiUk9MRV9TQUxFUyIsIlJPTEVfQURNSU4iLCJST0xFX0RFRkFVTFQiXSwiaHR0cHM6Ly9hcGkuc3RhZ2UuYnNrdHBheS5jby91c2VyIjp7ImVtYWlsQWRkcmVzcyI6ImFhcm9uQGJza3QxLmNvIn0sImlzcyI6Imh0dHBzOi8vYnNrdHBheS1zdGFnZS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJiZTIxNGQyMWRhMDUxNjg4ODE0ODRkIiwiYXVkIjpbImh0dHBzOi8vYXBpLnN0YWdlLmJza3RwYXkuY28iLCJodHRwczovL2Jza3RwYXktc3RhZ2UuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NTAzNzY2NiwiZXhwIjoxNjg1MTI0MDY2LCJhenAiOiI3aFM0N1M0WURzWU1nVTlpMFY4VXVmdkUzSG9JY0l6QiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJvcmdfaWQiOiJvcmdfbkRTcVVzUWlTWTRmOW9JeiIsInBlcm1pc3Npb25zIjpbXX0.k9Ec0UXJn_EYZmlfVNup4_L5mK3e_nibCZuuSS70eeR6YyL3RvEl1iFHY_NLIUwfdeH_IP1Ekm14zr_NKwA4_lp0aphJ0j3XZvSf8M4wpLauYyGYY9xQquOLw_gfskHPW7lDqNCcagf5W_BNyPhmermD6tZUB5E1aFecWagLtmjVDtX-LMeyZvdHC-DDTEpzoGSstlkhdBLJnoCN9-GzZ65Lm28yZQYEEqJD99mFGcGydhXuLrw8jgvDUhFWuKQVUGz9d8DDZ6asFfE-OrlQ9afGtPC1Nl-ruyK3jnfCT8uXXhcA_D6ZiQTxA2YHrXHYk18HMxtZ2QCTUKQuXloJdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/developerApplications/1552",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"developerApplications",
+						"1552"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rotate Developer Application Secret",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVFMHVNMXNGQkt3OXhXQzZ5WFM0MSJ9.eyJodHRwczovL2FwaS5zdGFnZS5ic2t0cGF5LmNvL3JvbGVzIjpbIlJPTEVfSU5WRU5UT1JZIiwiUk9MRV9TQUxFUyIsIlJPTEVfQURNSU4iLCJST0xFX0RFRkFVTFQiXSwiaHR0cHM6Ly9hcGkuc3RhZ2UuYnNrdHBheS5jby91c2VyIjp7ImVtYWlsQWRkcmVzcyI6ImFhcm9uQGJza3QxLmNvIn0sImlzcyI6Imh0dHBzOi8vYnNrdHBheS1zdGFnZS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJiZTIxNGQyMWRhMDUxNjg4ODE0ODRkIiwiYXVkIjpbImh0dHBzOi8vYXBpLnN0YWdlLmJza3RwYXkuY28iLCJodHRwczovL2Jza3RwYXktc3RhZ2UuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NTAzNzY2NiwiZXhwIjoxNjg1MTI0MDY2LCJhenAiOiI3aFM0N1M0WURzWU1nVTlpMFY4VXVmdkUzSG9JY0l6QiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJvcmdfaWQiOiJvcmdfbkRTcVVzUWlTWTRmOW9JeiIsInBlcm1pc3Npb25zIjpbXX0.k9Ec0UXJn_EYZmlfVNup4_L5mK3e_nibCZuuSS70eeR6YyL3RvEl1iFHY_NLIUwfdeH_IP1Ekm14zr_NKwA4_lp0aphJ0j3XZvSf8M4wpLauYyGYY9xQquOLw_gfskHPW7lDqNCcagf5W_BNyPhmermD6tZUB5E1aFecWagLtmjVDtX-LMeyZvdHC-DDTEpzoGSstlkhdBLJnoCN9-GzZ65Lm28yZQYEEqJD99mFGcGydhXuLrw8jgvDUhFWuKQVUGz9d8DDZ6asFfE-OrlQ9afGtPC1Nl-ruyK3jnfCT8uXXhcA_D6ZiQTxA2YHrXHYk18HMxtZ2QCTUKQuXloJdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/developerApplications/1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"developerApplications",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate new secret",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVFMHVNMXNGQkt3OXhXQzZ5WFM0MSJ9.eyJodHRwczovL2FwaS5zdGFnZS5ic2t0cGF5LmNvL3JvbGVzIjpbIlJPTEVfSU5WRU5UT1JZIiwiUk9MRV9TQUxFUyIsIlJPTEVfQURNSU4iLCJST0xFX0RFRkFVTFQiXSwiaHR0cHM6Ly9hcGkuc3RhZ2UuYnNrdHBheS5jby91c2VyIjp7ImVtYWlsQWRkcmVzcyI6ImFhcm9uQGJza3QxLmNvIn0sImlzcyI6Imh0dHBzOi8vYnNrdHBheS1zdGFnZS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJiZTIxNGQyMWRhMDUxNjg4ODE0ODRkIiwiYXVkIjpbImh0dHBzOi8vYXBpLnN0YWdlLmJza3RwYXkuY28iLCJodHRwczovL2Jza3RwYXktc3RhZ2UuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NTAzNzY2NiwiZXhwIjoxNjg1MTI0MDY2LCJhenAiOiI3aFM0N1M0WURzWU1nVTlpMFY4VXVmdkUzSG9JY0l6QiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJvcmdfaWQiOiJvcmdfbkRTcVVzUWlTWTRmOW9JeiIsInBlcm1pc3Npb25zIjpbXX0.k9Ec0UXJn_EYZmlfVNup4_L5mK3e_nibCZuuSS70eeR6YyL3RvEl1iFHY_NLIUwfdeH_IP1Ekm14zr_NKwA4_lp0aphJ0j3XZvSf8M4wpLauYyGYY9xQquOLw_gfskHPW7lDqNCcagf5W_BNyPhmermD6tZUB5E1aFecWagLtmjVDtX-LMeyZvdHC-DDTEpzoGSstlkhdBLJnoCN9-GzZ65Lm28yZQYEEqJD99mFGcGydhXuLrw8jgvDUhFWuKQVUGz9d8DDZ6asFfE-OrlQ9afGtPC1Nl-ruyK3jnfCT8uXXhcA_D6ZiQTxA2YHrXHYk18HMxtZ2QCTUKQuXloJdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/developerApplications/1352",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"developerApplications",
+						"1352"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
