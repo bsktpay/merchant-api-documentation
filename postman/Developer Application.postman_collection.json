@@ -23,12 +23,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/developerApplications/",
+					"raw": "http://{{hostname}}/developerApplications/",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{hostname}}"
 					],
-					"port": "8080",
 					"path": [
 						"developerApplications",
 						""
@@ -52,19 +51,48 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/developerApplications/",
+					"raw": "http://{{hostname}}/developerApplications",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{hostname}}"
 					],
-					"port": "8080",
 					"path": [
-						"developerApplications",
-						""
+						"developerApplications"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create Developer Application",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"API\",\n    \"scopes\" :[\n        \"SAVE_PRODUCT_PRIVILEGE\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{hostname}}developerApplications/",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}developerApplications"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete Developer Application",
@@ -81,15 +109,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/developerApplications/1552",
+					"raw": "http://{{hostname}}/developerApplications/1602",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{hostname}}"
 					],
-					"port": "8080",
 					"path": [
 						"developerApplications",
-						"1552"
+						"1602"
 					]
 				}
 			},
@@ -110,12 +137,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/developerApplications/1000",
+					"raw": "http://{{hostname}}/developerApplications/1000",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{hostname}}"
 					],
-					"port": "8080",
 					"path": [
 						"developerApplications",
 						"1000"
@@ -139,12 +165,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/developerApplications/1352",
+					"raw": "http://{{hostname}}/developerApplications/1352",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{hostname}}"
 					],
-					"port": "8080",
 					"path": [
 						"developerApplications",
 						"1352"
@@ -154,9 +179,6 @@
 			"response": []
 		}
 	],
-	"auth": {
-		"type": "bearer"
-	},
 	"event": [
 		{
 			"listen": "prerequest",

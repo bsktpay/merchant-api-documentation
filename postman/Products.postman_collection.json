@@ -11,14 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{hostname}}/products/13",
+					"raw": "http://{{hostname}}/products",
 					"protocol": "http",
 					"host": [
 						"{{hostname}}"
 					],
 					"path": [
-						"products",
-						"13"
+						"products"
 					]
 				}
 			},
@@ -185,6 +184,26 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
