@@ -24,6 +24,61 @@
 			"response": []
 		},
 		{
+			"name": "Save Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"New Product\",\n    \"description\": \"This is a new product edit.\",\n    \"unitPrice\": 1999,\n    \"productType\": {\"id\": 1},\n    \"category\": {\"id\": 252},\n    \"tax\": {\"id\": 103},\n    \"currency\": \"GBP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/products/16",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"products",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Products",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"New Product\",\n    \"description\": \"This is a new product.\",\n    \"unitPrice\": 1999,\n    \"productType\": {\"id\": 1},\n    \"category\": {\"id\": 252},\n    \"tax\": {\"id\": 103},\n    \"currency\": \"GBP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/products",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Attribute values",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -41,8 +96,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/products/{id}/attributes/",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/products/{id}/attributes/",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -105,8 +160,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/products/13/attributes/",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/products/13/attributes/",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -172,14 +227,68 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/attributes/",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/attributes/",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
 					"path": [
 						"attributes",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products Brands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/productBrands",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"productBrands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products Types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/productTypes",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"productTypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/productCategories",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"productCategories"
 					]
 				}
 			},

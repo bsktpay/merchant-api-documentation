@@ -23,8 +23,8 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/developerApplications/",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/developerApplications/",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -37,13 +37,16 @@
 			"response": []
 		},
 		{
-			"name": "Create Developer Application",
+			"name": "Get Security Scopes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "PUT",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"API\",\n    \"scopes\" :[\n        \"SAVE_PRODUCT_PRIVILEGE\"\n    ]\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,8 +54,37 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/developerApplications",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/system/security/scopes",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"system",
+						"security",
+						"scopes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Developer Application",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"API V3\",\n    \"scopes\" :[\n        \"SAVE_PRODUCT_PRIVILEGE\",\n        \"EDIT_PRODUCT_PRIVILEGE\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/developerApplications",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
@@ -109,42 +141,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/developerApplications/1602",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/developerApplications/202",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
 					"path": [
 						"developerApplications",
-						"1602"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Rotate Developer Application Secret",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"API\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://{{hostname}}/developerApplications/1000",
-					"protocol": "http",
-					"host": [
-						"{{hostname}}"
-					],
-					"path": [
-						"developerApplications",
-						"1000"
+						"202"
 					]
 				}
 			},
@@ -165,14 +169,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{hostname}}/developerApplications/1352",
-					"protocol": "http",
+					"raw": "https://{{hostname}}/developerApplications/302",
+					"protocol": "https",
 					"host": [
 						"{{hostname}}"
 					],
 					"path": [
 						"developerApplications",
-						"1352"
+						"302"
 					]
 				}
 			},
