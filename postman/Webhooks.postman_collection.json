@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "e404309e-50e3-44c2-874e-439d1318f533",
+		"name": "Webhooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Environment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/tenants/environments",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"tenants",
+						"environments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Environment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"environment\" : \"sandbox\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/tenants/environments",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"tenants",
+						"environments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get webhook endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/tenants/webhookAccess/sandbox",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"tenants",
+						"webhookAccess",
+						"sandbox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Webhook events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostname}}/system/webhooks/events",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"system",
+						"webhooks",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get webhook endpoint details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"environment\": \"sandbox\",\n    \"webHookUrl\": \"https://webhook.site/325f11cc-f2d5-4578-8167-7a41a24a947c\",\n    \"events\": [\n        \"ORDER.CANCELLED\",\n        \"ORDER.ACCEPTED\",\n        \"PRODUCT.UPDATED\",\n        \"ORDER.CREATED\",\n        \"PRODUCT.CREATED\",\n        \"ORDER.UPDATED\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostname}}/tenants/webhookAccess",
+					"protocol": "https",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"tenants",
+						"webhookAccess"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InVFMHVNMXNGQkt3OXhXQzZ5WFM0MSJ9.eyJodHRwczovL2FwaS5zdGFnZS5ic2t0cGF5LmNvL3JvbGVzIjpbIlJPTEVfSU5WRU5UT1JZIiwiUk9MRV9TQUxFUyIsIlJPTEVfQURNSU4iLCJST0xFX0RFRkFVTFQiXSwiaHR0cHM6Ly9hcGkuc3RhZ2UuYnNrdHBheS5jby91c2VyIjp7ImVtYWlsQWRkcmVzcyI6ImFhcm9uQGJza3QxLmNvIn0sImlzcyI6Imh0dHBzOi8vYnNrdHBheS1zdGFnZS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJiZTIxNGQyMWRhMDUxNjg4ODE0ODRkIiwiYXVkIjpbImh0dHBzOi8vYXBpLnN0YWdlLmJza3RwYXkuY28iLCJodHRwczovL2Jza3RwYXktc3RhZ2UuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY4NzI2NDU5OCwiZXhwIjoxNjg3MzUwOTk4LCJhenAiOiI3aFM0N1M0WURzWU1nVTlpMFY4VXVmdkUzSG9JY0l6QiIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJvcmdfaWQiOiJvcmdfbkRTcVVzUWlTWTRmOW9JeiIsInBlcm1pc3Npb25zIjpbXX0.lc8FOX-xNpVTKqZGnr674W2KlBGm6H7y8UxY33oidmykCh-t1rghSRUIUlNd7g5CPcCKlK6rxWTlDrLJncUWLkOkz0vTwzqyXwR0D-uQIPjg2KvIB1NNa14Pv_-bGKfJbksrmiej3hOQroFHk8MkxwMcGX6xc_FmxVIRHzhzbx2VlMsOTwRwE75sQ7e9rLSflOXTjSw6hVkvkfg6PzfvmoDfoHJ4ONzrGWTevSHrc5XqD_hgg8j0eXp-sUcr5QJMsMjZSSIlGr768RM5kKuhr3Fj4AGs9J0cvIBltlWAnE_Tr1LmKjIiQaSGf5JB6FoW-7fagiARWxObVtjEwzL2Xw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
