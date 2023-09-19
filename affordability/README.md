@@ -34,4 +34,4 @@ After scanning he can get application
 After Getting the application click on next button
 ## Final Step
 
-This final step shows the 100% progress of your proccesses. It close the popup after 10 seconds and you user will get the affordability 
+This final step shows the 100% progress of your proccesses. It close the popup after 30 seconds and you user will get the affordability 
