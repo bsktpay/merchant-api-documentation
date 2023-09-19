@@ -69,10 +69,8 @@
       function openModal() {
         modal = document.getElementById("myModal");
         if (resp_data == undefined || resp_data == null) {
-          console.log(":resp_data", resp_data);
           modal.style.display = "block";
         } else {
-          console.log(":resp_data", resp_data);
           return;
         }
         // adding message event listener for getting token
@@ -98,7 +96,6 @@
       };
 
       function getDataFromApi(token) {
-        console.log("got the toekn : ", token);
         const endpoint = `${variables.apiBaseUrl}/finance/affordability`;
 
         const headers = new Headers();
@@ -127,17 +124,6 @@
             closeModal();
           })
           .catch((error) => {
-            let data1 = {};
-            let elem = document.getElementById("BSKTPAYBUTTON");
-            resp_data = data1;
-            if (data1?.maximumMonthlyBorrowing)
-              elem.innerText = `My Affordability ${data1?.currency} ${
-                data1?.maximumMonthlyBorrowing / 100
-              }`;
-            else if (data1) elem.innerText = `My Affordability $0`;
-            closeModal();
-            console.error("Error:", error);
-            // Handle the error
           });
       }
     </script>
