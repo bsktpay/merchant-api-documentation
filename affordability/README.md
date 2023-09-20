@@ -11,7 +11,7 @@ Change Variables in script tag according to requirement
 ```bash
   const variables = {
         appId: "c114eb01-eca5-4147-8bf8-032a0de1891d", // application Id for getting qr code
-        baseUrlForBSKTPayApplication: "https://app.stage.bsktpay.co/", // base url of iframe application
+        baseUrlForBSKTPayApplication: "https://app.stage.bsktpay.co", // base url of iframe application
         apiBaseUrl: "https://stage-customer.api.bsktpay.co", // base url for affordability api
       };
 ```
