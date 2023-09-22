@@ -3,44 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-    <style>
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
-      }
-      .modal-content {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        width: 60%;
-        height: 80%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      .bskt-iframe {
-        width: 100%;
-        height: 90%;
-      }
-      .bskt-iframe iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-    </style>
+    <title>Affordability</title>
 
     <script>
-
-        // changeable 
+      // changeable
       const variables = {
         appId: "c114eb01-eca5-4147-8bf8-032a0de1891d", // application Id for getting qr code
         baseUrlForBSKTPayApplication: "https://app.stage.bsktpay.co", // base url of iframe application
@@ -49,97 +15,50 @@
 
       let modal = undefined;
       let resp_data = undefined;
-
-      // creates iframe always with the application id
+      let newWindow = undefined;
       document.addEventListener("DOMContentLoaded", function () {
-        // Create the iframe element
-        var iframe = document.createElement("iframe");
-        // Set the src attribute with the applicationId
-        iframe.src = `${variables.baseUrlForBSKTPayApplication}/affordability/login?iframe=true&appId=${variables.appId}`;
-        iframe.id = "bskt_iframe";
-        iframe.width = "100%";
-        iframe.height = "100%";
-        iframe.frameBorder = "0";
-        var modalContent = document.querySelector(".bskt-iframe");
-        // Append the iframe to the modal content div
-        modalContent.appendChild(iframe);
+        window.addEventListener("message", (event) => {
+          if (event.origin === variables.baseUrlForBSKTPayApplication) {
+            let elem = document.getElementById("BSKTPAYBUTTON");
+            resp_data = JSON.parse(event.data);
+            if (resp_data?.maximumMonthlyBorrowing)
+              elem.innerText = `My Affordability ${resp_data?.currency} ${
+                resp_data?.maximumMonthlyBorrowing / 100
+              }`;
+            else if (resp_data) elem.innerText = `My Affordability $0`;
+          }
+        });
       });
 
       // open Modal for Iframe
       function openModal() {
-        modal = document.getElementById("myModal");
-        if (resp_data == undefined || resp_data == null) {
-          modal.style.display = "block";
-        } else {
-          return;
+        if (resp_data) return;
+
+        const popupWidth = 600;
+        const popupHeight = 400;
+
+        const left = (window.innerWidth - popupWidth) / 2;
+        const top = (window.innerHeight - popupHeight) / 2;
+
+        newWindow = window.open(
+          `${variables.baseUrlForBSKTPayApplication}/affordability?appId=${variables.appId}`,
+          "_blank",
+          `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`
+        );
+
+        if (newWindow === null) {
+          alert(
+            "The pop-up was blocked by the browser. Please disable the pop-up blocker and try again."
+          );
         }
-        // adding message event listener for getting token
-        window.addEventListener("message", function (event) {
-          if (event.origin === variables.baseUrlForBSKTPayApplication) {
-            var tokenFromIframe = event.data;
-            if (tokenFromIframe) {
-              getDataFromApi(tokenFromIframe);
-            }
-          }
-        });
       }
 
-      function closeModal() {
-        modal.style.display = "none";
-      }
-      //   close modal on outside click
-      window.onclick = function (event) {
-        if (event.target === modal) {
-          // Listen for messages from the iframe
-          closeModal();
-        }
-      };
-
-      function getDataFromApi(token) {
-        const endpoint = `${variables.apiBaseUrl}/finance/affordability`;
-
-        const headers = new Headers();
-        headers.append("Authorization", `Bearer ${token}`);
-
-        const options = {
-          method: "GET",
-          headers: headers,
-        };
-
-        fetch(endpoint, options)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.json();
-          })
-          .then((data) => {
-            let elem = document.getElementById("BSKTPAYBUTTON");
-            resp_data = data;
-            if (data?.maximumMonthlyBorrowing)
-              elem.innerText = `My Affordability ${data?.currency} ${
-                data?.maximumMonthlyBorrowing / 100
-              }`;
-            else if (data) elem.innerText = `My Affordability $0`;
-            closeModal();
-          })
-          .catch((error) => {
-          });
-      }
     </script>
-
   </head>
 
   <body>
     <button id="BSKTPAYBUTTON" onclick="openModal()">
       Affordability with bsktpay
     </button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <div class="bskt-iframe">
-          <!-- i am conditionaly adding the iframe here  -->
-        </div>
-      </div>
-    </div>
   </body>
 </html>
