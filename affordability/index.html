@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Affordability</title>
 
+    <style>
+      /* Style for the background overlay */
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 9999;
+      }
+    </style>
+
     <script>
       // changeable
       const variables = {
@@ -16,6 +30,24 @@
       let modal = undefined;
       let resp_data = undefined;
       let newWindow = undefined;
+
+      function showOverlay() {
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      // Function to hide the background overlay
+      function hideOverlay() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      function checkPopupClosed() {
+        if (newWindow && newWindow.closed) {
+          hideOverlay();
+        } else {
+          setTimeout(checkPopupClosed, 100); // Check every 100 milliseconds
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("message", (event) => {
           if (event.origin === variables.baseUrlForBSKTPayApplication) {
@@ -33,9 +65,9 @@
       // open Modal for Iframe
       function openModal() {
         if (resp_data) return;
-
-        const popupWidth = 600;
-        const popupHeight = 400;
+        showOverlay();
+        const popupWidth = 700;
+        const popupHeight = 500;
 
         const left = (window.innerWidth - popupWidth) / 2;
         const top = (window.innerHeight - popupHeight) / 2;
@@ -50,13 +82,16 @@
           alert(
             "The pop-up was blocked by the browser. Please disable the pop-up blocker and try again."
           );
+          hideOverlay();
+        } else {
+          checkPopupClosed();
         }
       }
-
     </script>
   </head>
 
   <body>
+    <div id="overlay"></div>
     <button id="BSKTPAYBUTTON" onclick="openModal()">
       Affordability with bsktpay
     </button>
