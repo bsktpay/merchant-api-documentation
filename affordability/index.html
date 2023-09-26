@@ -14,7 +14,11 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        cursor: pointer;
         display: none;
+        justify-content: center;
+        align-items: center;
         z-index: 9999;
       }
     </style>
@@ -32,7 +36,7 @@
       let newWindow = undefined;
 
       function showOverlay() {
-        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlay").style.display = "flex";
       }
 
       // Function to hide the background overlay
@@ -63,6 +67,9 @@
       });
 
       // open Modal for Iframe
+      newWindow = null;
+      focusInterval = null;
+
       function openModal() {
         if (resp_data) return;
         showOverlay();
@@ -77,21 +84,29 @@
           "_blank",
           `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`
         );
-
+        checkPopupClosed()
         if (newWindow === null) {
           alert(
             "The pop-up was blocked by the browser. Please disable the pop-up blocker and try again."
           );
           hideOverlay();
         } else {
-          checkPopupClosed();
+          newWindow.focus();
+        }
+      }
+
+      function focusTheDiv() {
+        if (newWindow && !newWindow.closed) {
+          newWindow.focus(); // Set focus to the popup if it's open
+        } else {
+          hideOverlay();
         }
       }
     </script>
   </head>
 
   <body>
-    <div id="overlay"></div>
+    <div id="overlay" onclick="focusTheDiv()">click on the screen to bring the popup in front</div>
     <button id="BSKTPAYBUTTON" onclick="openModal()">
       Affordability with bsktpay
     </button>
