@@ -75,10 +75,10 @@
         showOverlay();
         const popupWidth = 700;
         const popupHeight = 500;
-
-        const left = (window.innerWidth - popupWidth) / 2;
-        const top = (window.innerHeight - popupHeight) / 2;
-
+      
+        const top = window.top.outerHeight / 2 + window.top.screenY - ( popupHeight / 2);
+        const left = window.top.outerWidth / 2 + window.top.screenX - ( popupWidth / 2);
+        
         newWindow = window.open(
           `${variables.baseUrlForBSKTPayApplication}/affordability?appId=${variables.appId}`,
           "_blank",
